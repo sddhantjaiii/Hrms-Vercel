@@ -35,11 +35,6 @@
     "DJANGO_SETTINGS_MODULE": "dashboard.settings",
     "PYTHONPATH": "/vercel/path0"
   },
-  "functions": {
-    "dashboard/vercel_wsgi.py": {
-      "includeFiles": "**"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
