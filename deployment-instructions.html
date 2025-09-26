@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS Deployment Instructions</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; text-align: center; }
+        .deployment-option {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .command {
+            background: #1e1e1e;
+            color: #d7d7d7;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 HRMS Separate Deployment Guide</h1>
+        
+        <div class="warning">
+            <strong>⚠️ Important:</strong> This root directory is configured for separate backend and frontend deployments. 
+            Do not deploy from this root directory.
+        </div>
+
+        <div class="deployment-option">
+            <h2>🔧 Backend Deployment (Django API)</h2>
+            <p><strong>Deploy from:</strong> <code>/backend</code> folder</p>
+            <p><strong>Vercel Config:</strong> <code>backend/vercel.json</code></p>
+            
+            <h3>Deployment Steps:</h3>
+            <ol>
+                <li>Navigate to backend directory</li>
+                <li>Run Vercel deployment command</li>
+            </ol>
+            
+            <div class="command">
+cd backend<br>
+vercel --prod
+            </div>
+            
+            <div class="info">
+                <strong>📋 Required Environment Variables:</strong><br>
+                • SECRET_KEY<br>
+                • DATABASE_URL<br>
+                • ALLOWED_HOSTS<br>
+                • FRONTEND_URL<br>
+                • DEBUG (set to False)<br>
+            </div>
+        </div>
+
+        <div class="deployment-option">
+            <h2>🎨 Frontend Deployment (React/Vite)</h2>
+            <p><strong>Deploy from:</strong> <code>/frontend</code> folder</p>
+            <p><strong>Vercel Config:</strong> <code>frontend/vercel.json</code></p>
+            
+            <h3>Deployment Steps:</h3>
+            <ol>
+                <li>Navigate to frontend directory</li>
+                <li>Run Vercel deployment command</li>
+            </ol>
+            
+            <div class="command">
+cd frontend<br>
+vercel --prod
+            </div>
+            
+            <div class="info">
+                <strong>📋 Required Environment Variables:</strong><br>
+                • VITE_API_BASE_URL<br>
+                • VITE_APP_ENV<br>
+            </div>
+        </div>
+
+        <div class="deployment-option">
+            <h2>🔗 Post-Deployment Configuration</h2>
+            <ol>
+                <li><strong>Update CORS:</strong> Add frontend URL to backend's FRONTEND_URL environment variable</li>
+                <li><strong>Update API Base URL:</strong> Set VITE_API_BASE_URL in frontend to backend deployment URL</li>
+                <li><strong>Test Connection:</strong> Verify frontend can communicate with backend API</li>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <strong>🔧 Environment Variables Setup:</strong><br>
+            Set environment variables in Vercel dashboard for each deployment:
+            <ul>
+                <li>Go to Vercel Dashboard → Project → Settings → Environment Variables</li>
+                <li>Add all required variables for production environment</li>
+                <li>Redeploy if variables are added after initial deployment</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

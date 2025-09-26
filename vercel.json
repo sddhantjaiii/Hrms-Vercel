@@ -1,0 +1,18 @@
+{
+  "_comment": "This is the root vercel.json - NOT USED for deployment",
+  "_instructions": [
+    "For separate deployments, use the vercel.json files in each directory:",
+    "Backend deployment: Deploy from /backend folder using backend/vercel.json",
+    "Frontend deployment: Deploy from /frontend folder using frontend/vercel.json"
+  ],
+  "_backend_deploy_command": "vercel --cwd backend",
+  "_frontend_deploy_command": "vercel --cwd frontend",
+  "version": 2,
+  "builds": [],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/deployment-instructions.html"
+    }
+  ]
+}
