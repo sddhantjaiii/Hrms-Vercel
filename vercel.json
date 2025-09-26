@@ -9,10 +9,10 @@
   "_frontend_deploy_command": "vercel --cwd frontend",
   "version": 2,
   "builds": [],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/deployment-instructions.html"
+      "source": "/(.*)",
+      "destination": "/deployment-instructions.html"
     }
   ]
 }
