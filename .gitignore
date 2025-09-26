@@ -1,0 +1,161 @@
+# ===================================================
+# HRMS Project - Root Level GitIgnore
+# ===================================================
+
+# Environment files (sensitive data)
+.env
+.env.local
+.env.development
+.env.test
+.env.staging
+*.local.env
+
+# Keep example and production template files for reference
+!.env.example
+!.env.production
+
+# ===== FRONTEND IGNORES =====
+# Dependencies
+frontend/node_modules/
+frontend/.pnpm-store/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/.next/
+frontend/out/
+
+# Environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Frontend logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+
+# ===== BACKEND IGNORES =====
+# Python
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/venv/
+backend/.venv/
+backend/env/
+backend/.env/
+
+# Django
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/media/
+backend/staticfiles/
+backend/local_settings.py
+
+# Backend logs
+backend/logs/
+backend/*.log
+
+# Backend environment files
+backend/.env
+backend/.env.local
+backend/.env.development
+backend/.env.test
+backend/.env.staging
+
+# ===== SHARED IGNORES =====
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Testing and coverage
+coverage/
+.coverage
+.nyc_output
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Deployment and CI/CD
+.vercel
+.netlify
+.aws/
+.gcp/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# Monitoring and analytics
+.sentry/
+.datadog/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vite-cache/
+
+# Lock files (uncomment if you want to ignore them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ===== KEEP THESE FILES =====
+# Configuration examples and documentation
+!.env.example
+!.env.production
+!*.example.*
+!*.template.*
+!README*.md
+!CHANGELOG*.md
+!CONTRIBUTING*.md
+!LICENSE*
+!.gitignore
+!.gitkeep
+
+# ===== PROJECT SPECIFIC =====
+# Build and test artifacts
+build_test_results.txt
+test_coverage.xml
+performance_report.json
+
+# Local development helpers
+dev_notes.md
+local_config.json
+debug_settings.json
