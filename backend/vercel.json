@@ -8,15 +8,9 @@
         "maxLambdaSize": "15mb",
         "runtime": "python3.11"
       }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles"
-      }
     }
   ],
+  "installCommand": "pip install -r requirements.txt",
   "env": {
     "DJANGO_SETTINGS_MODULE": "dashboard.settings",
     "PYTHONPATH": "/vercel/path0"

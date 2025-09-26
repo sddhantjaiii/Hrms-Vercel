@@ -5,15 +5,15 @@ echo "Starting Django build process for Vercel..."
 
 # Install dependencies
 echo "Installing Python dependencies..."
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 # Run Django system checks
 echo "Running Django system checks..."
-python manage.py check --deploy
+python3 manage.py check --deploy
 
 # Collect static files
 echo "Collecting static files..."
-python manage.py collectstatic --noinput --clear
+python3 manage.py collectstatic --noinput --clear
 
 # Create necessary directories
 echo "Creating required directories..."
